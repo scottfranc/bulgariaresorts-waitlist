@@ -1,4 +1,5 @@
 import Link from "next/link";
+import {BanskoResortImage} from "@/components/bansko-resort-image";
 import {WaitlistForm} from "@/components/waitlist-form";
 import {SiteFooter, SiteHeader} from "@/components/site-shell";
 import {env} from "@/lib/env";
@@ -37,6 +38,8 @@ export default function Home() {
               stays—so you pick the right place before you book.
             </p>
           </div>
+
+          <BanskoResortImage />
 
           <div className="mx-auto mt-14 max-w-md">
             <WaitlistForm source="coming-soon-landing" />
