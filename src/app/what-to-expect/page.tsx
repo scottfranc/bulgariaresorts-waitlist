@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {WaitlistForm} from "@/components/waitlist-form";
+import {SiteFooter, SiteHeader} from "@/components/site-shell";
 import type {Metadata} from "next";
 
 export const metadata: Metadata = {
@@ -11,83 +12,93 @@ export const metadata: Metadata = {
 const features = [
   {
     title: "Trip-fit matching",
-    body: "Tell us your destination style and we will prioritize resorts that fit your season, pace, and group profile.",
+    body: "Share your style and constraints—we surface resorts that fit your season, pace, and group.",
   },
   {
     title: "Decision-first comparisons",
-    body: "Compare resort options side by side with practical trade-offs before you spend time on booking sites.",
+    body: "Side-by-side trade-offs so you know where to spend your attention before booking.",
   },
   {
-    title: "Actionable planning guidance",
-    body: "See straightforward advice on budget level, transfer effort, and who each resort is best for.",
+    title: "Practical guidance",
+    body: "Straightforward notes on budget bands, transfer effort, and who each option suits best.",
   },
 ];
 
 const journey = [
-  "Start with your style, dates, and guests.",
-  "Review ranked matches with reasons.",
-  "Open partner booking options with more confidence.",
+  "Tell us how you travel—dates, guests, and what “good” looks like.",
+  "Review ranked matches with clear reasons, not endless tabs.",
+  "Move to booking partners with a shortlist you already trust.",
 ];
 
 export default function WhatToExpectPage() {
   return (
-    <main className="pb-20 pt-12 md:pt-16">
-      <section className="container-shell">
-        <div className="glass-card p-7 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-            Platform Vision
-          </p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-[#0f2742] md:text-5xl">
-            What you will be able to do
-          </h1>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
-            Bulgaria Resorts is being built to remove uncertainty from resort selection. Instead of
-            browsing generic lists, you will get structured, practical matches based on what
-            actually matters for your trip.
-          </p>
-          <Link
-            href="/"
-            className="mt-6 inline-flex rounded-full border border-[#113a63]/20 bg-white px-4 py-2 text-sm font-semibold text-[#113a63] transition hover:border-[#113a63]/40"
-          >
-            Back to waitlist
-          </Link>
-        </div>
-      </section>
+    <div className="flex min-h-full flex-col">
+      <SiteHeader />
 
-      <section className="container-shell mt-10">
-        <div className="grid gap-5 md:grid-cols-3">
-          {features.map((feature) => (
-            <article
-              key={feature.title}
-              className="rounded-[1.4rem] border border-[#e1d4c1] bg-white p-5 shadow-[0_12px_36px_rgba(15,39,66,0.07)]"
-            >
-              <h2 className="text-xl font-semibold tracking-tight text-[#0f2742]">{feature.title}</h2>
-              <p className="mt-2 text-sm leading-7 text-slate-600">{feature.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="container-shell mt-10">
-        <div className="grid gap-6 rounded-[1.5rem] border border-[#e2d6c4] bg-white/85 p-6 md:grid-cols-[1.1fr_0.9fr] md:items-start">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-              How it will work
+      <main className="flex-1">
+        <section className="container-shell pt-14 pb-16 sm:pt-20 sm:pb-24">
+          <div className="mx-auto max-w-2xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
+              Product direction
             </p>
-            <ol className="mt-4 space-y-3">
-              {journey.map((step, index) => (
-                <li key={step} className="flex gap-3 text-sm leading-7 text-slate-700">
-                  <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#f4ece0] text-xs font-semibold text-[#113a63]">
-                    {index + 1}
-                  </span>
-                  <span>{step}</span>
+            <h1 className="font-display mt-4 text-4xl font-medium tracking-tight text-neutral-900 sm:text-5xl">
+              What you will be able to do
+            </h1>
+            <p className="mt-6 text-[17px] leading-relaxed text-neutral-500">
+              Bulgaria Resorts is built to remove uncertainty from resort choice. Instead of
+              browsing undifferentiated lists, you get structured matches based on what matters for
+              your trip.
+            </p>
+            <p className="mt-8">
+              <Link
+                href="/"
+                className="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-[6px] transition hover:decoration-neutral-900"
+              >
+                ← Back to waitlist
+              </Link>
+            </p>
+          </div>
+
+          <div className="mx-auto mt-16 max-w-5xl border-t border-neutral-200/80 pt-16">
+            <ul className="grid gap-12 md:grid-cols-3 md:gap-10">
+              {features.map((feature) => (
+                <li key={feature.title}>
+                  <h2 className="font-display text-xl font-medium tracking-tight text-neutral-900">
+                    {feature.title}
+                  </h2>
+                  <p className="mt-3 text-[15px] leading-relaxed text-neutral-500">{feature.body}</p>
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
-          <WaitlistForm source="what-to-expect-page" />
-        </div>
-      </section>
-    </main>
+
+          <div className="mx-auto mt-20 max-w-5xl">
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:items-start lg:gap-16">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400">
+                  How it will work
+                </p>
+                <ol className="mt-8 space-y-8">
+                  {journey.map((step, index) => (
+                    <li key={step} className="flex gap-5">
+                      <span
+                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white text-xs font-semibold text-neutral-700"
+                        aria-hidden
+                      >
+                        {index + 1}
+                      </span>
+                      <p className="pt-0.5 text-[15px] leading-relaxed text-neutral-600">{step}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <WaitlistForm source="what-to-expect-page" variant="compact" />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <SiteFooter />
+    </div>
   );
 }

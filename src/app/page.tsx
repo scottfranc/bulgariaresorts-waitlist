@@ -1,87 +1,81 @@
 import Link from "next/link";
 import {WaitlistForm} from "@/components/waitlist-form";
+import {SiteFooter, SiteHeader} from "@/components/site-shell";
 import {env} from "@/lib/env";
+
+const pillars = [
+  {
+    title: "Fit-first matching",
+    text: "Resorts ranked to your season, pace, and group—not generic popularity lists.",
+  },
+  {
+    title: "Clear trade-offs",
+    text: "Budget, transfers, and vibe before you sink time into booking flows.",
+  },
+  {
+    title: "Human support",
+    text: "Launch updates and direct help when you need a second opinion.",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="pb-20 pt-12 md:pt-16">
-      <section className="container-shell">
-        <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-          <div>
-            <p className="inline-flex items-center rounded-full border border-[#e2d6c5] bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">
-              Bulgaria Resorts - Coming Soon
+    <div className="flex min-h-full flex-col">
+      <SiteHeader />
+
+      <main className="flex-1">
+        <section className="container-shell pt-16 pb-20 sm:pt-20 sm:pb-28">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
+              Coming soon
             </p>
-            <h1 className="mt-4 text-5xl font-semibold leading-tight tracking-tight text-[#0f2742] md:text-6xl">
-              Find your ideal Bulgaria resort
-              <span className="block text-[#b18845]">without the guesswork.</span>
+            <h1 className="font-display mt-5 text-[2.35rem] font-medium leading-[1.12] tracking-tight text-neutral-900 sm:text-5xl sm:leading-[1.08] md:text-[3.25rem]">
+              Plan a Bulgaria resort trip with confidence, not guesswork.
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700">
-              We are building a smarter trip-planning platform that matches your travel style to
-              the right ski, beach, spa, and family destinations in Bulgaria.
+            <p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-neutral-500 sm:text-lg">
+              We are building a focused trip-planning experience for ski, beach, spa, and family
+              stays—so you pick the right place before you book.
             </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              {[
-                "Decision-first resort matching",
-                "Practical budget and season guidance",
-                "Direct help for your trip goals",
-              ].map((point) => (
-                <div
-                  key={point}
-                  className="rounded-xl border border-[#e1d4c1] bg-white/80 px-4 py-3 text-sm font-medium text-slate-700"
-                >
-                  {point}
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 text-sm text-slate-600">
-              Need help now? Email us at{" "}
-              <a
-                href={`mailto:${env.contactEmail}`}
-                className="font-semibold text-[#113a63] underline decoration-[#c8a15b]/80 underline-offset-4"
-              >
-                {env.contactEmail}
-              </a>{" "}
-              and we will help you shortlist the best options.
-            </p>
-            <div className="mt-7 flex flex-wrap items-center gap-4 text-sm">
-              <Link
-                href="/what-to-expect"
-                className="inline-flex items-center rounded-full border border-[#113a63]/20 bg-white px-4 py-2 font-semibold text-[#113a63] transition hover:border-[#113a63]/40"
-              >
-                See what the platform will do
-              </Link>
-              <span className="text-slate-500">Early access emails go out first to waitlist members.</span>
-            </div>
           </div>
 
-          <div>
+          <div className="mx-auto mt-14 max-w-md">
             <WaitlistForm source="coming-soon-landing" />
           </div>
-        </div>
-      </section>
 
-      <section className="container-shell mt-14">
-        <div className="grid gap-4 rounded-[1.6rem] border border-[#e3d5bf] bg-white/85 p-6 md:grid-cols-3">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">For travelers</p>
-            <p className="mt-2 text-sm leading-7 text-slate-700">
-              Compare resort personalities quickly and avoid mismatched bookings.
+          <div className="mx-auto mt-20 max-w-2xl border-t border-neutral-200/80 pt-16">
+            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400">
+              Why join
+            </p>
+            <ul className="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
+              {pillars.map((item) => (
+                <li key={item.title} className="text-center sm:text-left">
+                  <p className="text-[15px] font-medium text-neutral-900">{item.title}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-500">{item.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mx-auto mt-16 max-w-lg text-center">
+            <p className="text-sm text-neutral-500">
+              Questions before launch?{" "}
+              <a href={`mailto:${env.contactEmail}`} className="link-muted font-medium text-neutral-700">
+                {env.contactEmail}
+              </a>
+            </p>
+            <p className="mt-6">
+              <Link
+                href="/what-to-expect"
+                className="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-[6px] transition hover:decoration-neutral-900"
+              >
+                Read what the platform will do →
+              </Link>
             </p>
           </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">For families & groups</p>
-            <p className="mt-2 text-sm leading-7 text-slate-700">
-              Get clarity on transfer effort, pace, and suitability before paying.
-            </p>
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">For early members</p>
-            <p className="mt-2 text-sm leading-7 text-slate-700">
-              Receive launch updates, private previews, and direct support by email.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+
+      <SiteFooter />
+    </div>
   );
 }

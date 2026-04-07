@@ -5,9 +5,10 @@ import {track} from "@vercel/analytics";
 
 type WaitlistFormProps = {
   source: string;
+  variant?: "default" | "compact";
 };
 
-export function WaitlistForm({source}: WaitlistFormProps) {
+export function WaitlistForm({source, variant = "default"}: WaitlistFormProps) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
@@ -50,42 +51,43 @@ export function WaitlistForm({source}: WaitlistFormProps) {
     }
   };
 
+  const pad = variant === "compact" ? "p-6 sm:p-7" : "p-8 sm:p-10";
+
   return (
-    <form onSubmit={onSubmit} className="glass-card p-6 md:p-7">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-        Join the waitlist
+    <form onSubmit={onSubmit} className={`surface ${pad}`}>
+      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400">
+        Waitlist
       </p>
-      <h3 className="mt-2 text-2xl font-semibold tracking-tight text-[#0f2742]">
-        Get launch updates first
+      <h3 className="font-display mt-3 text-2xl font-medium tracking-tight text-neutral-900 sm:text-[1.65rem]">
+        Request early access
       </h3>
-      <p className="mt-2 text-sm leading-7 text-slate-600">
-        We will email you the moment we go live, plus early access opportunities and launch offers.
+      <p className="mt-2 text-[15px] leading-relaxed text-neutral-500">
+        One email when we launch. No spam, unsubscribe anytime.
       </p>
 
-      <div className="mt-5 grid gap-3">
-        <label className="block text-sm font-medium text-slate-700">
-          First name (optional)
+      <div className="mt-8 space-y-6">
+        <label className="block">
+          <span className="text-[13px] font-medium text-neutral-600">Name (optional)</span>
           <input
             value={firstName}
             onChange={(event) => setFirstName(event.target.value)}
-            placeholder="Alex"
-            className="mt-1.5 h-11 w-full rounded-lg border border-[#d5deea] bg-white px-3 text-sm text-slate-900 outline-none transition focus:border-[#113a63] focus:ring-2 focus:ring-[#113a63]/15"
+            placeholder="Your first name"
+            className="input-clean mt-1"
           />
         </label>
 
-        <label className="block text-sm font-medium text-slate-700">
-          Email address
+        <label className="block">
+          <span className="text-[13px] font-medium text-neutral-600">Email</span>
           <input
             required
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="you@example.com"
-            className="mt-1.5 h-11 w-full rounded-lg border border-[#d5deea] bg-white px-3 text-sm text-slate-900 outline-none transition focus:border-[#113a63] focus:ring-2 focus:ring-[#113a63]/15"
+            className="input-clean mt-1"
           />
         </label>
 
-        {/* Hidden honeypot field for bots. */}
         <label className="hidden">
           Website
           <input
@@ -97,18 +99,14 @@ export function WaitlistForm({source}: WaitlistFormProps) {
         </label>
       </div>
 
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="mt-5 inline-flex h-11 w-full items-center justify-center rounded-lg bg-[#113a63] px-4 text-sm font-semibold text-white transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
-      >
-        {status === "loading" ? "Joining..." : "Join waitlist"}
+      <button type="submit" disabled={status === "loading"} className="btn-primary mt-8">
+        {status === "loading" ? "Sending…" : "Join the waitlist"}
       </button>
 
       {message && (
         <p
-          className={`mt-3 text-sm ${
-            status === "success" ? "text-emerald-700" : "text-rose-700"
+          className={`mt-4 text-sm ${
+            status === "success" ? "text-emerald-700" : "text-rose-600"
           }`}
         >
           {message}
