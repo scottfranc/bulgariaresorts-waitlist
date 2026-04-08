@@ -41,10 +41,10 @@ export function WaitlistForm({source, variant = "default"}: WaitlistFormProps) {
       }
 
       setStatus("success");
-      setMessage(data.message || "You have joined the waitlist.");
+      setMessage(data.message || "You are subscribed.");
       setFirstName("");
       setEmail("");
-      track("waitlist_signup_success", {source});
+      track("subscribe_success", {source});
     } catch {
       setStatus("error");
       setMessage("Network issue. Please try again in a few moments.");
@@ -56,13 +56,13 @@ export function WaitlistForm({source, variant = "default"}: WaitlistFormProps) {
   return (
     <form onSubmit={onSubmit} className={`surface ${pad}`}>
       <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400">
-        Waitlist
+        Subscribe
       </p>
       <h3 className="font-display mt-3 text-2xl font-medium tracking-tight text-neutral-900 sm:text-[1.65rem]">
-        Request early access
+        Stay in the loop
       </h3>
       <p className="mt-2 text-[15px] leading-relaxed text-neutral-500">
-        One email when we launch. No spam, unsubscribe anytime.
+        Get launch updates and curated resort insights. No spam, unsubscribe anytime.
       </p>
 
       <div className="mt-8 space-y-6">
@@ -100,7 +100,7 @@ export function WaitlistForm({source, variant = "default"}: WaitlistFormProps) {
       </div>
 
       <button type="submit" disabled={status === "loading"} className="btn-primary mt-8">
-        {status === "loading" ? "Sending…" : "Join the waitlist"}
+        {status === "loading" ? "Sending…" : "Subscribe"}
       </button>
 
       {message && (

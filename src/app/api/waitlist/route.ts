@@ -1,4 +1,5 @@
 import {NextResponse} from "next/server";
+import {env} from "@/lib/env";
 import {getSupabaseAdmin} from "@/lib/supabase";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -17,6 +18,28 @@ const isRateLimited = (key: string) => {
   requestTracker.set(key, now);
   return false;
 };
+
+async function syncWaitlistContactToBrevo(params: {email: string; firstName: string; source: string}) {
+  if (!env.brevoApiKey || !Number.isFinite(env.brevoWaitlistListId)) return;
+
+  await fetch("https://api.brevo.com/v3/contacts", {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "content-type": "application/json",
+      "api-key": env.brevoApiKey,
+    },
+    body: JSON.stringify({
+      email: params.email,
+      attributes: {
+        ...(params.firstName ? {FNAME: params.firstName} : {}),
+      },
+      listIds: [env.brevoWaitlistListId],
+      updateEnabled: true,
+      emailBlacklisted: false,
+    }),
+  });
+}
 
 export async function POST(request: Request) {
   try {
@@ -60,7 +83,7 @@ export async function POST(request: Request) {
 
     if (error?.code === "23505") {
       return NextResponse.json(
-        {ok: false, message: "You are already on the waitlist with this email."},
+        {ok: false, message: "You are already subscribed with this email."},
         {status: 409}
       );
     }
@@ -72,9 +95,15 @@ export async function POST(request: Request) {
       );
     }
 
+    try {
+      await syncWaitlistContactToBrevo({email, firstName, source});
+    } catch {
+      // Non-blocking: Supabase write already succeeded.
+    }
+
     return NextResponse.json({
       ok: true,
-      message: "You are on the waitlist. We will keep you updated.",
+      message: "You are subscribed. We will keep you updated.",
     });
   } catch {
     return NextResponse.json(

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {WaitlistForm} from "@/components/waitlist-form";
+import {Breadcrumbs} from "@/components/breadcrumbs";
 import {SiteFooter, SiteHeader} from "@/components/site-shell";
 import type {Metadata} from "next";
 
@@ -38,6 +39,7 @@ export default function WhatToExpectPage() {
       <main className="flex-1">
         <section className="container-shell pt-14 pb-16 sm:pt-20 sm:pb-24">
           <div className="mx-auto max-w-2xl">
+            <Breadcrumbs items={[{label: "Home", href: "/"}, {label: "What to expect"}]} />
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
               Product direction
             </p>
@@ -54,7 +56,7 @@ export default function WhatToExpectPage() {
                 href="/"
                 className="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-[6px] transition hover:decoration-neutral-900"
               >
-                ← Back to waitlist
+                ← Back to subscribe
               </Link>
             </p>
           </div>
