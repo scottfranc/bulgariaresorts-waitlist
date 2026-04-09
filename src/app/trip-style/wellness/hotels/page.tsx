@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import {Breadcrumbs} from "@/components/breadcrumbs";
 import {SeaDirectoryBrowser} from "@/components/sea-directory-browser";
 import {SiteFooter, SiteHeader} from "@/components/site-shell";
+import {StickyBookingCta} from "@/components/sticky-booking-cta";
 import {env} from "@/lib/env";
 import {wellnessHotels} from "@/lib/wellness-directory";
 
@@ -24,7 +25,7 @@ export default async function WellnessHotelsPage({searchParams}: PageProps) {
     <div className="flex min-h-full flex-col">
       <SiteHeader />
       <main className="flex-1">
-        <section className="container-shell py-14 sm:py-20">
+        <section className="container-shell pb-28 pt-14 sm:pb-32 sm:pt-20">
           <Breadcrumbs items={[{label: "Home", href: "/"}, {label: "Wellness", href: "/trip-style/wellness"}, {label: "Hotels"}]} />
           {activeDestination ? (
             <p className="mt-3 text-sm text-neutral-600">
@@ -45,6 +46,7 @@ export default async function WellnessHotelsPage({searchParams}: PageProps) {
             <p className="mt-2 text-sm leading-relaxed text-neutral-600">For bookings and reservations, reach us at <a href={`mailto:${env.contactEmail}`} className="link-muted font-medium text-neutral-700">{env.contactEmail}</a>.</p>
           </div>
         </section>
+        <StickyBookingCta label="Need help booking a wellness stay?" />
       </main>
       <SiteFooter />
     </div>

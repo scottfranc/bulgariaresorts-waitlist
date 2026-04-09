@@ -11,8 +11,33 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Bulgaria Resorts",
+    url: env.siteUrl,
+    email: env.contactEmail,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: env.contactEmail,
+        availableLanguage: ["en"],
+        areaServed: "BG",
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "reservations",
+        email: env.contactEmail,
+        availableLanguage: ["en"],
+        areaServed: "BG",
+      },
+    ],
+  };
+
   return (
     <div className="flex min-h-full flex-col">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(organizationSchema)}} />
       <SiteHeader />
       <main className="flex-1">
         <section className="container-shell py-14 sm:py-20">

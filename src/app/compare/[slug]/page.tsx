@@ -172,27 +172,28 @@ export default async function ComparePage({params}: PageProps) {
           </p>
 
           <div className="mt-12 border-t border-neutral-200/80 pt-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400">
-              Related guides
-            </p>
-            <ul className="mt-4 grid gap-3 md:grid-cols-2">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400">Next best reads</p>
+            <ul className="mt-4 grid gap-3 md:grid-cols-3">
               {relatedCompare.map((entry) => (
-                <li key={entry.slug}>
-                  <Link className="link-muted" href={`/compare/${entry.slug}`}>
+                <li key={entry.slug} className="surface p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-500">Compare</p>
+                  <Link className="mt-2 block text-sm font-medium text-neutral-900 transition hover:text-[var(--accent)]" href={`/compare/${entry.slug}`}>
                     {entry.title}
                   </Link>
                 </li>
               ))}
               {relatedBestFor.map((entry) => (
-                <li key={entry.slug}>
-                  <Link className="link-muted" href={`/best-for/${entry.slug}`}>
+                <li key={entry.slug} className="surface p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-500">Best for</p>
+                  <Link className="mt-2 block text-sm font-medium text-neutral-900 transition hover:text-[var(--accent)]" href={`/best-for/${entry.slug}`}>
                     {entry.title}
                   </Link>
                 </li>
               ))}
               {relatedTiming.map((entry) => (
-                <li key={entry.resort}>
-                  <Link className="link-muted" href={`/best-time-to-visit/${entry.resort}`}>
+                <li key={entry.resort} className="surface p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-500">Best time</p>
+                  <Link className="mt-2 block text-sm font-medium text-neutral-900 transition hover:text-[var(--accent)]" href={`/best-time-to-visit/${entry.resort}`}>
                     {entry.title}
                   </Link>
                 </li>

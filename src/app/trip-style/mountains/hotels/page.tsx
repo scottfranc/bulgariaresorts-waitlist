@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import {Breadcrumbs} from "@/components/breadcrumbs";
 import {SeaDirectoryBrowser} from "@/components/sea-directory-browser";
 import {SiteFooter, SiteHeader} from "@/components/site-shell";
+import {StickyBookingCta} from "@/components/sticky-booking-cta";
 import {env} from "@/lib/env";
 import {mountainHotels} from "@/lib/mountain-directory";
 
@@ -26,7 +27,7 @@ export default async function MountainHotelsPage({searchParams}: PageProps) {
     <div className="flex min-h-full flex-col">
       <SiteHeader />
       <main className="flex-1">
-        <section className="container-shell py-14 sm:py-20">
+        <section className="container-shell pb-28 pt-14 sm:pb-32 sm:pt-20">
           <Breadcrumbs
             items={[
               {label: "Home", href: "/"},
@@ -71,6 +72,7 @@ export default async function MountainHotelsPage({searchParams}: PageProps) {
             </p>
           </div>
         </section>
+        <StickyBookingCta label="Need help choosing and booking a mountain stay?" />
       </main>
       <SiteFooter />
     </div>
