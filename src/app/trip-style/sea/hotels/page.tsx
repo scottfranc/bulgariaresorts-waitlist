@@ -49,6 +49,8 @@ export default async function SeaHotelsPage({searchParams}: PageProps) {
             description="A practical sea-hotel list for Bulgaria coast planning with search, pagination, photos, and detail modals."
             items={destinationHotels}
             mode="hotels"
+            hotelTaxonomy="sea"
+            tripStyleLabel="Sea"
           />
           <p className="mt-8 text-sm text-neutral-500">
             Want destination context first?{" "}

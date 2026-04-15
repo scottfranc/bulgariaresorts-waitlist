@@ -39,6 +39,7 @@ export default async function SkiHotelsPage({searchParams}: PageProps) {
             items={destinationHotels}
             mode="hotels"
             hotelTaxonomy="mountains"
+            tripStyleLabel="Ski"
           />
           <p className="mt-8 text-sm text-neutral-500">Want destination context first? <Link href="/trip-style/ski/cities" className="link-muted">Explore ski destinations</Link>.</p>
           <div className="mt-6 rounded-2xl border border-neutral-200 bg-white/75 p-4 sm:p-5">

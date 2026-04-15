@@ -64,8 +64,6 @@ export const mountainHotels: SeaDirectoryItem[] = [
     destination: "Bansko",
     summary: "Premium mountain stay with high service standards and lift-area convenience.",
     facts: ["Luxury positioning", "Strong spa offer", "Central Bansko access"],
-    image: "https://images.unsplash.com/photo-1713714516316-102eafcf4ab3?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Premium mountain hotel base in Bansko",
     hotelRatings: {scale: 10, priceLevel: 4, familyFit: 8, wellness: 9, beachProximity: 9, quietness: 7, nightlifeAccess: 7},
   },
   {
@@ -74,8 +72,6 @@ export const mountainHotels: SeaDirectoryItem[] = [
     destination: "Bansko",
     summary: "Upscale option balancing resort comfort with practical access to the mountain core.",
     facts: ["Modern rooms", "Good for couples", "Reliable service profile"],
-    image: "https://images.unsplash.com/photo-1713714516195-60224327d751?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Modern mountain hotel in Bansko",
     hotelRatings: {scale: 10, priceLevel: 5, familyFit: 7, wellness: 8, beachProximity: 8, quietness: 8, nightlifeAccess: 6},
   },
   {
@@ -84,8 +80,6 @@ export const mountainHotels: SeaDirectoryItem[] = [
     destination: "Borovets",
     summary: "Resort-core hotel with efficient access for short mountain breaks.",
     facts: ["Core location", "Convenient logistics", "Good all-rounder"],
-    image: "https://images.unsplash.com/photo-1713714516354-b09dbb1a04b4?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Borovets hotel area near mountain slopes",
     hotelRatings: {scale: 10, priceLevel: 6, familyFit: 8, wellness: 6, beachProximity: 9, quietness: 6, nightlifeAccess: 7},
   },
   {
@@ -94,8 +88,6 @@ export const mountainHotels: SeaDirectoryItem[] = [
     destination: "Borovets",
     summary: "Forest-leaning mountain retreat with spa facilities and quieter positioning.",
     facts: ["Strong wellness profile", "High quietness", "Premium atmosphere"],
-    image: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Wellness mountain resort atmosphere in Borovets",
     hotelRatings: {scale: 10, priceLevel: 4, familyFit: 7, wellness: 9, beachProximity: 7, quietness: 9, nightlifeAccess: 4},
   },
   {
@@ -104,8 +96,6 @@ export const mountainHotels: SeaDirectoryItem[] = [
     destination: "Pamporovo",
     summary: "Established mountain hotel suited to families and value-minded mountain trips.",
     facts: ["Family-capable", "Good value", "Practical base"],
-    image: "https://images.unsplash.com/photo-1713714516316-102eafcf4ab3?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Pamporovo mountain hotel setting",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 9, wellness: 6, beachProximity: 8, quietness: 8, nightlifeAccess: 4},
   },
   {
@@ -114,8 +104,6 @@ export const mountainHotels: SeaDirectoryItem[] = [
     destination: "Pamporovo",
     summary: "Central mountain stay with broad amenities and straightforward resort access.",
     facts: ["Central positioning", "Group-friendly", "Reliable facilities"],
-    image: "https://images.unsplash.com/photo-1713714516195-60224327d751?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Mountain hotel in Pamporovo",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 8, wellness: 6, beachProximity: 8, quietness: 7, nightlifeAccess: 5},
   },
   {
@@ -124,8 +112,6 @@ export const mountainHotels: SeaDirectoryItem[] = [
     destination: "Velingrad",
     summary: "High-comfort spa stay for travelers blending mountain air with wellness focus.",
     facts: ["Strong thermal wellness", "Couples fit", "Polished service"],
-    image: "https://images.unsplash.com/photo-1713714516354-b09dbb1a04b4?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Spa-focused mountain hotel in Velingrad",
     hotelRatings: {scale: 10, priceLevel: 5, familyFit: 8, wellness: 10, beachProximity: 7, quietness: 8, nightlifeAccess: 3},
   },
   {
@@ -134,8 +120,6 @@ export const mountainHotels: SeaDirectoryItem[] = [
     destination: "Velingrad",
     summary: "Comfort-led wellness hotel with practical value and easy town access.",
     facts: ["Balanced value", "Wellness amenities", "Easy local access"],
-    image: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Velingrad wellness stay in mountain foothills",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 7, wellness: 8, beachProximity: 7, quietness: 7, nightlifeAccess: 3},
   },
 ];

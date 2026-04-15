@@ -2,10 +2,11 @@ export type SeaDirectoryItem = {
   name: string;
   location: string;
   destination?: string;
+  bookingUrl?: string;
   summary: string;
   facts: string[];
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
   ratings?: {
     scale: 10;
     access: number;
@@ -144,8 +145,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Pomorie",
     summary: "Modern resort profile with spa and family-oriented facilities.",
     facts: ["Upscale leaning", "Spa + pools", "Airport transfer convenience"],
-    image: "https://images.unsplash.com/photo-1749560917112-918847390483?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Resort-style hotel in coastal Bulgaria",
     hotelRatings: {scale: 10, priceLevel: 6, familyFit: 9, wellness: 8, beachProximity: 8, quietness: 7, nightlifeAccess: 4},
   },
   {
@@ -154,8 +153,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Nessebar",
     summary: "Large resort format with multiple amenities for mixed trip types.",
     facts: ["Family-capable", "Resort convenience", "Near old town access"],
-    image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Hotel-facing coastal view in Nessebar",
     hotelRatings: {scale: 10, priceLevel: 6, familyFit: 8, wellness: 6, beachProximity: 8, quietness: 6, nightlifeAccess: 5},
   },
   {
@@ -164,8 +161,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Sunny Beach",
     summary: "Central base suited to travelers wanting nightlife proximity.",
     facts: ["Strong location", "Mid-range comfort", "Walkable to main strip"],
-    image: "https://images.unsplash.com/photo-1468413253725-0d5181091126?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Sunny Beach hotel zone near the coastline",
     hotelRatings: {scale: 10, priceLevel: 8, familyFit: 6, wellness: 4, beachProximity: 7, quietness: 4, nightlifeAccess: 9},
   },
   {
@@ -174,8 +169,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Golden Sands",
     summary: "High-capacity upscale option with broad amenities.",
     facts: ["Upscale segment", "Large inventory", "Close to entertainment zones"],
-    image: "https://images.unsplash.com/photo-1713714516354-b09dbb1a04b4?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Golden Sands resort skyline near the sea",
     hotelRatings: {scale: 10, priceLevel: 5, familyFit: 7, wellness: 7, beachProximity: 8, quietness: 5, nightlifeAccess: 8},
   },
   {
@@ -184,8 +177,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "St. St. Constantine and Helena",
     summary: "Wellness-oriented stay with thermal and spa features.",
     facts: ["Spa-focused", "Calmer location", "Couples and wellness fit"],
-    image: "https://images.unsplash.com/photo-1590089137678-3d81de766b94?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "St. St. Constantine and Helena wellness-style coastal setting",
     hotelRatings: {scale: 10, priceLevel: 5, familyFit: 7, wellness: 10, beachProximity: 7, quietness: 8, nightlifeAccess: 3},
   },
   {
@@ -194,8 +185,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Varna",
     summary: "City-and-coast blend for travelers wanting urban convenience.",
     facts: ["Business + leisure fit", "Central location", "Polished service style"],
-    image: "https://images.unsplash.com/photo-1713714516316-102eafcf4ab3?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Varna coastal city hotel district atmosphere",
     hotelRatings: {scale: 10, priceLevel: 4, familyFit: 6, wellness: 7, beachProximity: 8, quietness: 6, nightlifeAccess: 7},
   },
   {
@@ -204,8 +193,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Balchik",
     summary: "Apartment-resort setup favored for longer sea stays.",
     facts: ["Long-stay friendly", "Scenic setting", "Good for groups"],
-    image: "https://images.unsplash.com/photo-1713714516195-60224327d751?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Balchik-area resort setting above the Black Sea",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 8, wellness: 6, beachProximity: 6, quietness: 8, nightlifeAccess: 3},
   },
   {
@@ -214,8 +201,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Sunny Beach",
     summary: "Quieter edge-of-strip option balancing comfort and access.",
     facts: ["Mid-upscale", "Beachfront positioning", "Less noisy than center"],
-    image: "https://images.unsplash.com/photo-1468413253725-0d5181091126?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Sunny Beach beachfront hotel atmosphere",
     hotelRatings: {scale: 10, priceLevel: 6, familyFit: 7, wellness: 6, beachProximity: 9, quietness: 6, nightlifeAccess: 8},
   },
   {
@@ -224,8 +209,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "St. St. Constantine and Helena",
     summary: "Refined stay with spa and relaxed coastal tone.",
     facts: ["Upscale comfort", "Wellness amenities", "Good couples fit"],
-    image: "https://images.unsplash.com/photo-1590089137678-3d81de766b94?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Seaside wellness-hotel atmosphere near Varna coast",
     hotelRatings: {scale: 10, priceLevel: 5, familyFit: 7, wellness: 8, beachProximity: 8, quietness: 8, nightlifeAccess: 4},
   },
   {
@@ -234,8 +217,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Albena",
     summary: "Cluster of family-first beach properties in a managed resort area.",
     facts: ["Family convenience", "Resort ecosystem", "Predictable logistics"],
-    image: "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Albena family resort coastline and hotel strip",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 9, wellness: 5, beachProximity: 8, quietness: 7, nightlifeAccess: 4},
   },
   {
@@ -244,8 +225,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Sozopol",
     summary: "Apartment-style resort option near old-town experiences.",
     facts: ["Flexible stays", "Good for longer visits", "Close to Sozopol core"],
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Sozopol resort area by the sea",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 7, wellness: 5, beachProximity: 7, quietness: 7, nightlifeAccess: 5},
   },
   {
@@ -254,8 +233,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Pomorie",
     summary: "Spa and health-treatment oriented coastal stay.",
     facts: ["Wellness reputation", "Calmer destination", "Good shoulder-season value"],
-    image: "https://images.unsplash.com/photo-1749560917112-918847390483?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Spa hotel in Pomorie",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 7, wellness: 9, beachProximity: 7, quietness: 8, nightlifeAccess: 3},
   },
   {
@@ -264,8 +241,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Ahtopol",
     summary: "Simple coastal stay for travelers prioritizing quiet and sea proximity.",
     facts: ["Low-key atmosphere", "Budget friendly", "Good for relaxed beach days"],
-    image: "https://images.unsplash.com/photo-1708519692028-6e8ae48ea3fc?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Quiet Ahtopol coastal stay setting",
     hotelRatings: {scale: 10, priceLevel: 9, familyFit: 7, wellness: 4, beachProximity: 7, quietness: 9, nightlifeAccess: 2},
   },
   {
@@ -274,8 +249,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Tsarevo",
     summary: "Practical base with easy access to Tsarevo beaches and nearby southern coast spots.",
     facts: ["Central positioning", "Good value profile", "Convenient short-stay option"],
-    image: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Tsarevo coastal hotel surroundings",
     hotelRatings: {scale: 10, priceLevel: 8, familyFit: 7, wellness: 4, beachProximity: 7, quietness: 7, nightlifeAccess: 3},
   },
   {
@@ -284,8 +257,6 @@ export const seaHotels: SeaDirectoryItem[] = [
     destination: "Primorsko",
     summary: "Beach-focused hotel option in one of the more active southern summer destinations.",
     facts: ["Near main beach zones", "Family-capable setup", "Popular in peak season"],
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Primorsko hotel zone by the beach",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 8, wellness: 5, beachProximity: 9, quietness: 5, nightlifeAccess: 7},
   },
 ];

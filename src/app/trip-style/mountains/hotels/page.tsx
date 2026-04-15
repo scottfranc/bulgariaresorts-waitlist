@@ -50,6 +50,7 @@ export default async function MountainHotelsPage({searchParams}: PageProps) {
             items={destinationHotels}
             mode="hotels"
             hotelTaxonomy="mountains"
+            tripStyleLabel="Mountains"
           />
           <p className="mt-8 text-sm text-neutral-500">
             Want destination context first?{" "}

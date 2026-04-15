@@ -7,7 +7,7 @@ import {env} from "@/lib/env";
 const pillars = [
   {
     title: "Fit-first matching",
-    text: "Resorts ranked to your season, pace, and group—not generic popularity lists.",
+    text: "Resorts ranked to your season, pace, and group, not generic popularity lists.",
   },
   {
     title: "Clear trade-offs",
@@ -31,11 +31,11 @@ export default function Home() {
               Built for smarter stays
             </p>
             <h1 className="font-display mt-5 text-[2.35rem] font-medium leading-[1.12] tracking-tight text-neutral-900 sm:text-5xl sm:leading-[1.08] md:text-[3.25rem]">
-              Plan a Bulgaria resort trip with confidence, not guesswork.
+              Plan a Bulgaria resort trip with confidence and ease.
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-neutral-500 sm:text-lg">
-              We are building a focused trip-planning experience for ski, beach, spa, and family
-              stays—so you pick the right place before you book.
+              We build a focused trip-planning experience for Bulgaria, helping you choose the
+              right place, shape your itinerary, and plan with more clarity.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export default function Home() {
                 href="/what-to-expect"
                 className="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-medium text-neutral-800 transition hover:-translate-y-0.5 hover:border-neutral-500 hover:text-neutral-900"
               >
-                Read what the platform will do
+                What to expect from us
                 <span className="ml-2" aria-hidden>
                   →
                 </span>

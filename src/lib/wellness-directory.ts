@@ -46,8 +46,6 @@ export const wellnessHotels: SeaDirectoryItem[] = [
     destination: "Velingrad",
     summary: "High-comfort thermal wellness stay with premium spa facilities.",
     facts: ["Top spa profile", "Couples fit", "Refined service"],
-    image: "https://images.unsplash.com/photo-1713714516354-b09dbb1a04b4?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Premium wellness hotel in Velingrad",
     hotelRatings: {scale: 10, priceLevel: 5, familyFit: 8, wellness: 10, beachProximity: 7, quietness: 8, nightlifeAccess: 3},
   },
   {
@@ -56,8 +54,6 @@ export const wellnessHotels: SeaDirectoryItem[] = [
     destination: "Velingrad",
     summary: "Comfort-led spa base offering strong value and restorative facilities.",
     facts: ["Balanced value", "Wellness amenities", "Calm atmosphere"],
-    image: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Wellness-focused hotel base in Velingrad",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 7, wellness: 8, beachProximity: 7, quietness: 7, nightlifeAccess: 3},
   },
   {
@@ -66,8 +62,6 @@ export const wellnessHotels: SeaDirectoryItem[] = [
     destination: "Sandanski",
     summary: "Wellness-forward hotel with practical access to spa services and park zones.",
     facts: ["Thermal program", "Central location", "Reliable facilities"],
-    image: "https://images.unsplash.com/photo-1713714516316-102eafcf4ab3?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Spa hotel in Sandanski",
     hotelRatings: {scale: 10, priceLevel: 6, familyFit: 8, wellness: 9, beachProximity: 8, quietness: 7, nightlifeAccess: 3},
   },
   {
@@ -76,8 +70,6 @@ export const wellnessHotels: SeaDirectoryItem[] = [
     destination: "Velingrad",
     summary: "Modern wellness property with upscale comfort and quieter positioning.",
     facts: ["Upscale segment", "Spa-heavy offer", "Quietness"],
-    image: "https://images.unsplash.com/photo-1713714516195-60224327d751?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Upscale wellness stay in Velingrad",
     hotelRatings: {scale: 10, priceLevel: 4, familyFit: 7, wellness: 9, beachProximity: 7, quietness: 9, nightlifeAccess: 2},
   },
   {
@@ -86,8 +78,6 @@ export const wellnessHotels: SeaDirectoryItem[] = [
     destination: "Hisarya",
     summary: "Thermal town stay with practical wellness offerings and easy walkability.",
     facts: ["Good value", "Thermal profile", "Walkable town context"],
-    image: "https://images.unsplash.com/photo-1713714516354-b09dbb1a04b4?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Hisarya wellness hotel setting",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 7, wellness: 8, beachProximity: 8, quietness: 8, nightlifeAccess: 2},
   },
   {
@@ -96,8 +86,6 @@ export const wellnessHotels: SeaDirectoryItem[] = [
     destination: "Devin",
     summary: "Nature-near wellness stay suitable for quieter restorative breaks.",
     facts: ["Calm vibe", "Strong quietness", "Good shoulder-season fit"],
-    image: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Devin wellness hotel near mountain nature",
     hotelRatings: {scale: 10, priceLevel: 7, familyFit: 7, wellness: 8, beachProximity: 7, quietness: 9, nightlifeAccess: 2},
   },
 ];
